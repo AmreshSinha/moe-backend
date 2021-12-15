@@ -2,7 +2,6 @@ const mongoose = require("mongoose");
 require("dotenv").config();
 
 // db name= moeDB
-// Collection Name = moeCollection
 
 async function connect() {
   const dbUser = process.env.DB_USER;
