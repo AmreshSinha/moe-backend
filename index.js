@@ -3,11 +3,14 @@ const express = require("express");
 var cors = require('cors')
 var postController = require("./controllers/post");
 
+// .env
+require("dotenv").config();
+
 // Defining App and enable CORS Requests
 const app = express();
 app.use(cors());
 const Router = express.Router();
-const port = 3000;
+const port = process.env.PORT;
 
 // DataBase
 const db = require("./db");
