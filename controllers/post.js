@@ -21,10 +21,8 @@ exports.paste = function (req, res) {
         });
 };
 
-exports.list = function (req, res) {
-    const id = req.params;
-    
-    Post.findOne({ id })
+exports.list = function (id, res) {
+    Post.findOne({ "_id": id })
       .then((result) => {
           res.send(result);
       })

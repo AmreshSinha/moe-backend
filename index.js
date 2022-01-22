@@ -39,7 +39,8 @@ app.get("/paste", (req, res) => {
 });
 
 app.get("/:id", (req, res) => {
-  postController.list(req, res);
+  const id = req.params.id;
+  postController.list(id, res);
 });
 
 app.get("/", (req, res) => {
