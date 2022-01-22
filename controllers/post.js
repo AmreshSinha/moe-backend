@@ -27,7 +27,7 @@ exports.list = function (id, res) {
           res.send(result);
       })
       .catch((err) => {
-          res.send("Error!");
+          res.status(404).send("Error!");
             console.log(err);
       })
 };
