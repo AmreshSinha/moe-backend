@@ -6,8 +6,8 @@ exports.index = function (req, res) {
 };
 
 exports.paste = function (req, res) {
-    const name = req.query.name;
-    const body = req.query.body;
+    const name = req.body.name;
+    const body = req.body.body;
 
     const Paste = new Post({ name, body });
 

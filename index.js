@@ -9,6 +9,10 @@ require("dotenv").config();
 // Defining App and enable CORS Requests
 const app = express();
 app.use(cors());
+
+// Integrating Body-Parser for POST Requests
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 const Router = express.Router();
 const port = process.env.PORT;
 
@@ -34,7 +38,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // Routes
-app.get("/paste", (req, res) => {
+app.post("/paste", (req, res) => {
   postController.paste(req, res);
 });
 
